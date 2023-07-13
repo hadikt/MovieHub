@@ -1,0 +1,56 @@
+<!-- <div class="p-3 "> -->
+  <!-- <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle value="bold">Bold</mat-button-toggle>
+    <mat-button-toggle value="italic">Italic</mat-button-toggle>
+
+  </mat-button-toggle-group> -->
+  <!-- <mat-slide-toggle>Toggle me!
+    <button>Movies</button>
+  </mat-slide-toggle> -->
+
+  <!-- </div> -->
+  <!-- <ng-container *ngIf="{
+    time: $time | async
+  } as filter ">
+
+  <button (click)="changeTime('week')"
+  class="cursor-pointer relative w-full text-text-color flex items-center justify-between gap-6 px-2 py-2 md:px-6 md:py-1 rounded-3xl duration-1000">
+  <span [ngClass]="{'translate-x-[75px] md:translate-x-[95px]' : Switch3,'left-0':!Switch3}"
+    class="absolute w-1/2 h-full left-0 rounded-3xl bg-yellow-600 duration-500"></span>
+  <span class="relative px-2 py-1 ml-2 md:ml-3 text-xs md:text-base">Today</span>
+  <span class="relative px-2 py-1 md:ml-3 text-xs md:text-base">This Week</span>
+</button>
+
+<div class="flex flex-col " *ngFor="let item of TrendingMovies|async">
+  <img src="{{base_img}}original/{{item.backdrop_path}}">
+</div>
+</ng-container> -->
+
+
+
+
+<div>
+<h1 class="text-sm md:px-9 px-2 text-white md:text-8xl   font-bold md:mt-8 z-50  ">Trending</h1>
+          <div class="flex space-x-4 md:ml-14 transition duration-300 delay-150 hover:delay-300 md:w-44 w-40 " *ngIf="$time|async as DoW">
+            <button (click)="toggle(DoW === 'week'?'day':'week' )" class="bg-white/20  w-48 flex justify-between p-2 px-4 rounded-full relative">
+              <span class="z-10  ">Day</span>
+              <span class="z-10">Week</span>
+              <div class="w-1/2 bg-red-600 absolute h-full rounded-full right-0 top-0" [ngClass]="{ 'left-0' : DoW==='day'?true:false }">
+              </div>
+            </button>
+          </div>
+            <!-- ....................................................LOOP ................................................-->
+
+            <div  class="flex  flex-col p-2 relative">
+              <div class="space-y-5 " >
+                <div  class="h-fit w-full flex gap-5 overflow-x-auto">
+                  <app-moviecard class="w-full h-full hover:scale-105 " *ngFor="let item of TrendingMovies|async "[movieData]="item" ></app-moviecard>
+                </div>
+
+                <div class="absolute -top-8" >
+            <router-outlet></router-outlet>
+                </div>
+<!-- ...................................................................Popular -->
+<h1 class="md:text-8xl  md:ml-8 text-white font-bold p-1  "> Popular</h1>
+<div class="flex overflow-x-scroll h-fit  w-full gap-5">
+  <app-moviecard class="hover:scale-105" *ngFor="let item of PopularMovies |async" [movieData]="item"></app-moviecard>

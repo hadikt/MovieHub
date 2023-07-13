@@ -1,0 +1,14 @@
+<div class="md:w-[300px] w-40 h-[290px] md:pt-0 mt-5  text-black/80 z-50 rounded-xl  font-sans  md:h-[420px] overflow-hidden bg-indigo-950/40  text-black"[routerLink]="['/details',movieData?.media_type,movieData?.id]" >
+  <div class="md:overscroll-x-none ">
+  <img class="md:h-80 md:w-full w-full  h-56 rounded-t-xl md:object-fill object-cover" src="{{ base_img }}original/{{ movieData?.poster_path }}" alt="">
+  </div>
+  <div class="p-2  overflow-hidden">
+    <p class="md:text-2xl text-sm max-h-16 text-white/70 overflow-hidden font-semibold" *ngIf="movieData?.name">{{movieData?.name}}</p>
+    <p class="md:text-xl text-sm max-h-16 overflow-hidden text-white/70 font-semibold" *ngIf="movieData?.title">{{movieData?.title}}</p>
+
+    <p class="text-white/70 text-xs">Rating {{movieData?.vote_average}}</p>
+    <p class="font-semibold text-white/70" *ngIf="movieData?.first_air_date">RD:{{movieData?.first_air_date}}</p>
+    <p class="font-semibold text-white/70" *ngIf="movieData?.release_date">{{movieData?.release_date}}</p>
+  </div>
+</div>
+-

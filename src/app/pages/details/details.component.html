@@ -1,0 +1,16 @@
+<div class=" bg-white h-screen object-cover">
+    <div class="relative flex items-center justify-center">
+  <img class="h-screen object-center md:h-[100vh] brightness-50	 w-max md:w-screen md:object-cover" src="{{imageUrl1}}/{{movies?.poster_path}}" alt="">
+  <div class="md:w-[1100px] flex w-96 h-72 md:h-[500px] bg-black/50 absolute   ">
+    <img class="w-1/2 h-full object-cover" src="{{imageUrl1}}/{{movies?.poster_path}}" alt="">
+    <div class="w-1/2 text-white pt-8  bg-black/5">
+<div class="pl-3 flex flex-col   justify-center mt-12 md:mt-0">
+    <p class="text-sm md:text-base">{{movies?.title | uppercase}}</p>
+    <p class="hidden md:block md:text-3xl">{{movies?.title}}</p>
+    <p class="text-lg  md:text-lg">({{movies?.release_date}})</p>
+    <p class="hidden md:block md:text-lg">{{movies?.overview}}</p>
+</div>
+    </div>
+  </div>
+</div>
+</div>
